@@ -13,7 +13,7 @@ function Header() {
         {user ? (
             <>
             <Avatar src={user.avatar} />
-            <span>{user.name}</span>
+            <span>{user.name}</span>    
             </>
         ) : (
             <span>Chua dang nhap</span>
