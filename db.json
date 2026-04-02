@@ -2,7 +2,7 @@
   "stories": [
     {
       "title": "Scissor Seven",
-      "author": "Ai biet",
+      "author": "Ai biet đâu",
       "id": 1
     }
   ],
@@ -15,7 +15,22 @@
       "title": "Phieu luu",
       "active": true,
       "id": 2
+    },
+    {
+      "title": "cbbds",
+      "description": "hsuhxus",
+      "image": "jsnxs",
+      "Ngày phát hành": "888",
+      "active": true,
+      "id": 3
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "tuan@gmail.com",
+      "password": "1999",
+      "id": 1
+    }
+  ],
+  "login": []
 }

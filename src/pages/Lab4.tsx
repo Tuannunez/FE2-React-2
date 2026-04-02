@@ -37,6 +37,13 @@ export default function StoryForm() {
       <Form.Item name="description" label="Description">
         <Input.TextArea placeholder="description"></Input.TextArea>
       </Form.Item>
+      <Form.Item name="image" label="image">
+        <Input.TextArea placeholder="image"></Input.TextArea>
+      </Form.Item>
+
+      <Form.Item name="Ngày phát hành" label="Ngày phát hành">
+        <Input.TextArea placeholder="Ngày phát hành"></Input.TextArea>
+      </Form.Item>
 
       <Form.Item name="active" valuePropName="checked">
         <Checkbox>Active</Checkbox>
