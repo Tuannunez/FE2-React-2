@@ -1,0 +1,21 @@
+{
+  "stories": [
+    {
+      "title": "Scissor Seven",
+      "author": "Ai biet",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "title": "q",
+      "id": 1
+    },
+    {
+      "title": "Phieu luu",
+      "active": true,
+      "id": 2
+    }
+  ],
+  "users": []
+}
