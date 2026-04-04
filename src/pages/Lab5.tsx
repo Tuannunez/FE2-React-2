@@ -1,25 +1,9 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Button, Image, Popconfirm, Table } from "antd";
-import axios from "axios";
+import { Button, Image, Popconfirm, Spin, Table } from "antd";
 import { Link } from "react-router-dom";
+import useCRUDStory from "../hooks/useCRUDStory";
 
 export function StoryList() {
-  const { data } = useQuery({
-    queryKey: ["stories"],
-    queryFn: async () => {
-      const res = await axios.get("http://localhost:3000/stories");
-      return res.data;
-    },
-  });
-
-  const qc = useQueryClient();
-  const { mutate } = useMutation({
-    mutationFn: async (id: number) =>
-      await axios.delete(`http://localhost:3000/stories/${id}`),
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ["stories"] });
-    },
-  });
+  const { list, remove } = useCRUDStory();
 
   const columns = [
     {
@@ -49,7 +33,7 @@ export function StoryList() {
             description="Ban co chac la xoa ko?"
             okText="Xóa"
             cancelText="Suy nghĩ thêm"
-            onConfirm={() => mutate(record.id)}
+            onConfirm={() => remove(record.id)}
           >
             <Button danger>Xóa</Button>
           </Popconfirm>
@@ -60,7 +44,9 @@ export function StoryList() {
       ),
     },
   ];
-  return (
-    <Table columns={columns} dataSource={data} pagination={{ pageSize: 5 }} />
-  );
+
+  if (list.isLoading) return <Spin />;
+  if (list.isError) return <p>Lỗi khi tải danh sách</p>;
+
+  return <Table columns={columns} dataSource={list.data} pagination={{ pageSize: 5 }} rowKey="id" />;
 }

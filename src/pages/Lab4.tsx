@@ -45,6 +45,7 @@ export default function StoryForm() {
         <Input.TextArea placeholder="Ngày phát hành"></Input.TextArea>
       </Form.Item>
 
+
       <Form.Item name="active" valuePropName="checked">
         <Checkbox>Active</Checkbox>
         
